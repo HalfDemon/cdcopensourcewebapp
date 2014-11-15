@@ -1,0 +1,55 @@
+<% ad_img_tag = "\"<img src='http://#{@url_of_ad_image}' />\"".html_safe %>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>C3web</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= javascript_include_tag "boostrap.min" %>
+  <%= stylesheet_link_tag "boostrap.min" %>
+  <%= stylesheet_link_tag "bootstrap-responsive.min" %>
+</head>
+<body>
+
+<nav class="navbar navbar-default">
+<div class="container-fluid">
+  <ul class="nav navbar-nav">
+  <li> <%= link_to "Home", "/" %></li>
+<% if session[:user_id].to_i != 0 %>
+  <li><%= link_to "#{User.find(session[:user_id]).name}'s Profile", "/users/#{session[:user_id]}" %> </li>
+  <li><%= link_to "Log Out", "/login/out" %></li>
+<% else %>
+  <li><%= link_to "Log In", "/login" %></li>
+  <li><%= link_to "Sign Up", "/users/new" %></li>
+<% end %>
+  </ul>
+</div>
+</div>
+</nav>
+
+<div id=advertisement class="text-center">
+  <% if @url_of_ad_image == nil %>
+    <p>Set the path to the adserver URL generator in app/controllers/application_controller.rb!</p>
+  <% else %>
+    <%= eval(ad_img_tag).html_safe %>
+  <% end %>
+</div>
+
+<%= yield %>
+
+<div class="navbar">
+<p>
+<% if session[:user_id].to_i != 0 and User.find(session[:user_id]).poster%>
+  <%= link_to "Create a Post", "/posts/new" %>
+<% end %>
+<% if session[:user_id].to_i != 0 and User.find(session[:user_id]).moderator%>
+  <%= link_to "Posts Moderation", "/posts" %>
+<% end %>
+<% if session[:user_id].to_i != 0 and User.find(session[:user_id]).administrator%>
+  | <%= link_to "Users Administration", "/users" %>
+<% end %>
+</p>
+</div>
+
+</body>
+</html>

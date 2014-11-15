@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+<div class="container">
+<div class="panel panel-default">
+<div class="panel panel-body">
+  <h2><%= @post.title %></h2>
+  <h4><%= @post.summary.html_safe %></h4>
+  <p>
+    <%= @post.body.html_safe %>
+  </p>
+
+  <p>
+    By <%= link_to "#{@post.user.name}", @post.user %>
+  </p>
+</div>
+</div>
+</div>
+<% if session[:user_id].to_i != 0 %>
+<%= link_to "Comment on this post", "/comments/new?post_reply=#{@post.id}" %>
+<% end %>
+
+
+<% if session[:user_id].to_i != 0 and (@post.user_id == session[:user_id] or User.find(session[:user_id]).moderator)%>
+| <%= link_to 'Edit', edit_post_path(@post) %> 
+<% end %>
+
+<h3 align="center">Comments</h3>
+
+<div class="container">
+<div class="panel panel-default">
+  <% @post.comments.each do | comment | %>
+    <div class="panel panel-body">
+      <strong><%= link_to "#{comment.user.name}", comment.user %></strong>
+      <p><%= comment.body.html_safe %></p>
+    </div>
+  <% end %>
+</div>
+</div>
+
+

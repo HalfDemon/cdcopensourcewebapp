@@ -1,0 +1,32 @@
+Connecting to database specified by database.yml
+Compiled jquery.js  (4ms)  (pid 16583)
+Compiled jquery_ujs.js  (0ms)  (pid 16583)
+Compiled bootstrap.min.js  (0ms)  (pid 16583)
+Compiled comments.js  (224ms)  (pid 16583)
+Compiled index.js  (128ms)  (pid 16583)
+Compiled login.js  (126ms)  (pid 16583)
+Compiled posts.js  (126ms)  (pid 16583)
+Compiled users.js  (127ms)  (pid 16583)
+Compiled application.js  (797ms)  (pid 16583)
+Compiled bootstrap-responsive.min.css  (0ms)  (pid 16583)
+Compiled bootstrap.css  (0ms)  (pid 16583)
+Compiled bootstrap.min.css  (0ms)  (pid 16583)
+Warning. Error encountered while saving cache /srv/www/rails/webapp/tmp/cache/sass/5515bbd5c33747a6010df66253f29d0fd6439664/comments.css.scssc: can't dump anonymous class #<Class:0x000000046161e8>
+
+Compiled comments.css  (4ms)  (pid 16583)
+Warning. Error encountered while saving cache /srv/www/rails/webapp/tmp/cache/sass/5515bbd5c33747a6010df66253f29d0fd6439664/index.css.scssc: can't dump anonymous class #<Class:0x000000046161e8>
+
+Compiled index.css  (1ms)  (pid 16583)
+Warning. Error encountered while saving cache /srv/www/rails/webapp/tmp/cache/sass/5515bbd5c33747a6010df66253f29d0fd6439664/login.css.scssc: can't dump anonymous class #<Class:0x000000046161e8>
+
+Compiled login.css  (1ms)  (pid 16583)
+Warning. Error encountered while saving cache /srv/www/rails/webapp/tmp/cache/sass/5515bbd5c33747a6010df66253f29d0fd6439664/posts.css.scssc: can't dump anonymous class #<Class:0x000000046161e8>
+
+Compiled posts.css  (1ms)  (pid 16583)
+Warning. Error encountered while saving cache /srv/www/rails/webapp/tmp/cache/sass/5515bbd5c33747a6010df66253f29d0fd6439664/scaffolds.css.scssc: can't dump anonymous class #<Class:0x000000046161e8>
+
+Compiled scaffolds.css  (9ms)  (pid 16583)
+Warning. Error encountered while saving cache /srv/www/rails/webapp/tmp/cache/sass/5515bbd5c33747a6010df66253f29d0fd6439664/users.css.scssc: can't dump anonymous class #<Class:0x000000046161e8>
+
+Compiled users.css  (30ms)  (pid 16583)
+Compiled application.css  (72ms)  (pid 16583)

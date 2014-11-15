@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Body:</b>
+  <%= @comment.body %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= link_to "#{@comment.user.name}", @comment.user %>
+</p>
+
+<p>
+  <b>Post:</b>
+  <%= link_to "#{@comment.post.title}", @comment.post %>
+</p>
+
+
+<% if session[:user_id].to_i != 0 and (@comment.user_id == session[:user_id] or User.find(session[:user_id]).moderator)%>
+<%= link_to 'Edit', edit_comment_path(@comment) %> |
+<% end %>
+
